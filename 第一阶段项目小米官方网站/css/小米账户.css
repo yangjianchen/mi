@@ -1,0 +1,167 @@
+
+.firstline{
+  padding: 50px 0;
+}
+
+.tabs li{
+  width: 125px;
+  text-align: center;
+}
+.main-body{
+  padding: 30px 34px 0 25px;
+}
+.main-body li{
+
+  list-style: none;
+
+}
+.main-body h3{
+  display: inline-block;
+}
+.main-body span:nth-child(2){
+  color: red;
+  font-size: 22px;
+  padding: 0 5px 0 5px;
+}
+.main-body span:nth-child(3){
+  padding: 0 5px 0 5px;
+}
+#a h4{
+  display: inline-block;
+}
+.title{
+  border-bottom: 1px solid #e6e6e6;
+}
+.title>div{
+  float: left;
+}
+.progress{
+  float: left;
+  width: 400px;
+  height: 5px !important;
+  margin-top:18px
+}
+.title :last-child span{
+  font-size: 25px;
+  color: red;
+}
+
+.list{
+  padding-left: 0;
+}
+.list li{
+  border-bottom: 1px solid #e6e6e6;
+  padding: 30px 0;
+}
+.bg-orange{
+  background: #ff6700 !important;
+}
+h4{
+  margin: 0;
+}
+.mokuai img{
+  float: left;
+}
+.mokuai a:nth-of-type(1){
+ width: 103px !important;
+  position: absolute;
+  right: 10px;
+  top: 20px
+}
+.mokuai a:nth-of-type(2){
+  width: 103px !important;
+  position: absolute;
+  right: 150px;
+  top: 20px
+}
+.yellow{
+  color: #ff6700;
+}
+.gray{
+  color: gray;
+}
+.big{
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  border: 1px solid gainsboro;
+  position: absolute;
+  z-index: 1000;
+  top: -8px;
+  left: 120px;
+}
+.small{
+  width: 80px;
+  height: 80px;
+  background: url("../images/zhanghu/n-avator-bg.png");
+  border-radius: 50%;
+  border: 3px solid white;
+  margin: auto auto;
+}
+.big2{
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  border: 1px solid gainsboro;
+  position: relative;
+  z-index: 1000;
+  /*top: 200px;*/
+  /*left: 120px;*/
+}
+.list2 li{
+  border-bottom: 1px solid #e6e6e6;
+  padding: 20px 0;
+}
+.list2 li a{
+  position: relative;
+  top: -35px;
+}
+.list3 li{
+  margin-top: 30px;
+}
+.icon-logo{
+  float: left;
+  width: 40px;
+  height: 40px;
+  background-image: url(../images/zhanghu/icon_service.png);
+}
+.font{
+ margin-left: 60px;
+ }
+.font p{
+  margin-bottom: 0;
+}
+.font p:nth-child(2){
+color: gray;
+  font-size: 13px;
+}
+.bangding{
+  float: left;
+  border-bottom: 1px solid #e6e6e6;
+  width: 100%
+}
+
+footer>div{
+  padding-top:80px;
+  padding-bottom:20px;
+  color: #757575;
+  font-size:12px;
+  text-align:center;
+}
+
+
+footer>div>ul{
+  text-align:center;
+}
+footer>div>ul>li{
+  display: inline-block;
+}
+footer>div>ul>li>a{
+  padding:0 20px;
+}
+footer>div a{
+  color: #757575;
+}
+p{
+  margin-bottom: 0 !important;
+}

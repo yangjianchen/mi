@@ -1,0 +1,46 @@
+
+body {
+  background: gainsboro;
+  overflow: hidden;
+}
+
+.ul1 li {
+  list-style: none;
+}
+.one {
+  display: none;
+}
+#sel1{
+  position: absolute;
+  background: white;
+  z-index: 2000;
+  overflow: scroll;
+  max-height: 200px;
+}
+#sel2 {
+  display: none;
+  position: absolute;
+  z-index: 2000;
+  overflow: scroll;
+  max-height: 200px;
+  background: white;
+}
+footer>div{
+  padding-top:80px;
+  padding-bottom:20px;
+  color: #757575;
+  font-size:12px;
+  text-align:center;
+}
+footer>div>ul{
+  text-align:center;
+}
+footer>div>ul>li{
+  display: inline-block;
+}
+footer>div>ul>li>a{
+  padding:0 20px;
+}
+footer>div a{
+  color: #757575;
+}

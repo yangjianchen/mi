@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="css/注册页.css">
+  <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="js/user.js"></script>
+  <script src="jquery-3.2.1.js"></script>
+  <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+  <style>
+    .success{
+      border-color: #2b542c;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168;
+    }
+    .error{
+      border-color: #843534;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="col-lg-4"></div>
+  <div class="col-lg-4">
+    <div class="row">
+      <p class="text-center"><img src="images/milogo.png" alt=""></p>
+    </div>
+    <div class="row">
+      <h2 class="text-center">设置用户名密码</h2>
+      <br>
+      <br>
+    </div>
+      <div class="row">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label  class="col-sm-3 control-label ">用户名:</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="ipt1" placeholder="用户名">
+              <p style="display: none; color: gainsboro" class="p1">请输入用户名</p>
+            </div>
+          </div>
+          <div class="form-group">
+            <label  class="col-sm-3 control-label ">密码:</label>
+            <div class="col-sm-9">
+              <input type="password" class="form-control" id="ipt2" placeholder="密码">
+              <p style="display: none; color: gainsboro" class="p2">请输入密码</p>
+            </div>
+
+          </div>
+          <div class="form-group">
+            <label  class="col-sm-3 control-label ">确认密码:</label>
+            <div class="col-sm-9">
+              <input type="password" class="form-control" id="ipt3" placeholder="确认密码">
+              <p style="display: none; color: gainsboro" class="p3">请输入相同的密码</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    <div class="row">
+      <form action="验证成功.html">
+        <button type="submit" class="btn btn-primary form-control submit"  style="background:#ff6700;border: none">立即设置</button>
+        <p class="help-block">
+          注册帐号即表示您同意并愿意遵守小米 <a href="">用户协议</a>和 <a href="">隐私政策</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+<div id="myModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">状态</h4>
+      </div>
+      <div class="modal-body">
+        <p>设置失败</p>
+        请对应输入数值，所有项为必填项不能为空
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="container-fluid">
+  <div class="container">
+    <ul>
+      <li><a href="">简体</a>|</li>
+      <li><a href="">繁体</a>|</li>
+      <li><a href="">English</a>|</li>
+      <li><a href="">常见问题</a></li>
+    </ul>
+    <p>
+      <span>小米公司版权所有- <span><img src="images/ghs.png" alt=""></span><a href="">京ICP备10046444-京公网安备11010802020134号</a>-京ICP证110507号</span>
+    </p>
+  </div>
+</footer>
+<script>
+
+  function Focus(obj,str) {
+    obj.show();
+    obj.html(str).css( "color","gray")
+  }
+  function  Blur(obj,id,str1,str2) {
+    if($(this).val()==''){
+      $(this).next().html("不能为空").css( "color","red");
+      $(this).removeClass("success");
+      $(this).addClass("error ");
+    }else if( $(this).val()==$('#'+id).val()|| obj.test($(this).val())){
+      $(this).next().html(str1).css("color","green");
+      $(this).addClass("success");
+      $(this).removeClass("error ");
+      $(this).data('off',true);
+    }else{
+      $(this).remove("success");
+      $(this).addClass("error");
+      $(this).next().html(str2).css( "color","red");
+    }
+  }
+$('#ipt1').focus(function () {
+  Focus($('.p1'),"请输入6到16位的字符");
+});
+$('#ipt1').blur(function () {
+  Blur.call($(this),/^[a-zA-Z0-9_]{3,16}$/,null,'输入正确','输入错误' );
+});
+$('#ipt2').focus(function () {
+  Focus($('.p2'),'请输入密码');
+});
+$('#ipt2').blur(function () {
+  Blur.call($(this),/^[a-zA-Z\d_]{6,16}$/,null,'输入正确','输入错误' );
+});
+$('#ipt3').focus(function () {
+  Focus($('.p3'),'请输入相同的密码');
+});
+$('#ipt3').blur(function () {
+  Blur.call($(this),/\W&\S/,"ipt2",'输入正确','输入错误' );
+});
+
+$('.submit').click(function () {
+  if($('#ipt1').data('off')&&$('#ipt2').data('off')&&$('#ipt3').data('off')){
+    var username=$('#ipt1').val();
+    var password=$('#ipt2').val();
+    store.update('userkey',username);
+    store.update('passkey',password);
+  }else {
+    $('#myModal').modal('show');
+    return false;
+  }
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+[
+   {
+"image":"images/list1.png",
+"name":"小米5给你新的每一天",
+"price":"2400元"
+},
+  {
+    "image":"images/list2.png",
+    "name":"小米4给你新的每一天",
+    "price":"2499元"
+  },
+  {
+    "image":"images/list3.jpg",
+    "name":"小米3给你新的每一天",
+    "price":"1499元"
+  },
+  {
+    "image":"images/list4.jpg",
+    "name":"小米2给你新的每一天",
+    "price":"1200元"
+  },
+  {
+    "image":"images/list5.jpg",
+    "name":"小米2s给你新的每一天",
+    "price":"1200元"
+  },
+  {
+    "image":"images/list6.jpg",
+    "name":"小米2A给你新的每一天",
+    "price":"1200元"
+  },
+  {
+    "image":"images/list2.png",
+    "name":"小米2A给你新的每一天",
+    "price":"1200元"
+  }
+
+]

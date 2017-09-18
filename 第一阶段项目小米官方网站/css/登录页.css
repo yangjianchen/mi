@@ -1,0 +1,106 @@
+.content{
+    background:#14212B;
+}
+.content>div.container{
+    background:url(../images/bannerbig.jpg) center center no-repeat;
+    width: 100%;
+    min-height: 588px;
+    position:relative;
+}
+.log-in{
+    position:absolute;
+    width:400px;
+    padding:0 30px;
+    box-sizing:border-box;
+    top:30px;
+    right:100px;
+    background:#fff;
+}
+.log-in-head{
+    padding:25px 0 25px;
+    text-align: center;
+}
+.log-in-head>span{
+
+    width: 1px;
+    height: 30px;
+    margin: 0 30px 0 30px;
+    font-size:24px;
+    border: 1px solid #e0e0e0;
+}
+.log-in-head:after{
+    display:block;
+    content:"";
+    clear:both;
+}
+.log-in-btn{
+    border:0 !important;
+    font-size:25px !important;
+
+}
+.log-in-btn:hover{
+    background:transparent !important;
+    color:#f56600 !important;
+}
+.log-in-submit{
+    background:#f56600;
+    color:#fff;
+}
+.log-in-help{
+    text-align:center;
+    margin-top:20px;
+}
+.log-in-help a{
+    color:#999;
+}
+.log-in-help span{
+    margin:0 10px;
+}
+.log-in-else{
+    padding-top:120px;
+    padding-bottom:30px;
+}
+.log-in-else fieldset{
+    border-top: 1px solid #e0e0e0;
+    padding-top: 10px;
+}
+.log-in-else legend{
+    font-size: 14px;
+    color: #b0b0b0;
+    margin: 0 auto;
+    width:auto;
+    text-align: center;
+    border:0;
+}
+.log-in-else div[class^=col]{
+    text-align: center;
+}
+.log-in-else div[class^=col] a{
+    display:block;
+    margin:0 auto;
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    color:#fff;
+    font-size:25px;
+    background:#ccc;
+}
+footer>div{
+    padding-top:80px;
+    padding-bottom:20px;
+    color: #757575;
+    font-size:12px;
+    text-align:center;
+}
+footer>div>ul{
+    text-align:center;
+}
+footer>div>ul>li{
+    display: inline-block;
+}
+footer>div>ul>li>a{
+    padding:0 20px;
+}
+footer>div a{
+    color: #757575;
+}

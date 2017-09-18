@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/登录页.css">
+     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+   <script src="js/user.js"></script>
+    <script src="jquery-3.2.1.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="container">
+        <div>
+            <img src="images/mistore_logo.png" alt="">
+        </div>
+    </div>
+</div>
+<div class="container-fluid content">
+    <div class="container">
+        <div class="log-in">
+            <div class="log-in-head">
+                <button class="btn btn-default log-in-btn" type="button">账号登录</button>
+                <span></span>
+                <button class="btn btn-default log-in-btn" type="button">扫码登录</button>
+            </div>
+            <div class="log-in-content">
+                <form action="小米登录后主页面.html" id="form">
+                    <div class="form-group form-group-lg">
+                        <input type="text" class="form-control" id="ipt1" placeholder="邮箱/手机号码/小米账号">
+                    </div>
+                    <div class="form-group form-group-lg">
+                        <input type="password" class="form-control" id="ipt2" placeholder="密码">
+                    </div>
+                    <button class="btn btn-block btn-lg log-in-submit" type="submit">立即登录</button>
+                    <p class="log-in-help"><a href="">注册小米账号</a><span>|</span><a href="">忘记密码？</a></p>
+                </form>
+            </div>
+            <div class="log-in-else">
+                <fieldset>
+                    <legend align="center">其他方式登录</legend>
+                </fieldset>
+                <div class="row">
+                    <div class="col-xs-3">
+                        <a href=""><span class="fa fa-qq"></span></a>
+                    </div>
+                    <div class="col-xs-3">
+                        <a href=""><span class="fa fa-weixin"></span></a>
+                    </div>
+                    <div class="col-xs-3">
+                        <a href=""><span class="fa fa-weibo"></span></a>
+                    </div>
+                    <div class="col-xs-3">
+                        <a href=""><span class="fa fa-github"></span></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="myModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">状态</h4>
+      </div>
+      <div class="modal-body">
+        <p>登录失败</p>
+        请对应输入数值，所有项为必填项不能为空
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid">
+    <div class="container">
+        <ul>
+            <li><a href="">简体</a>|</li>
+            <li><a href="">繁体</a>|</li>
+            <li><a href="">English</a>|</li>
+            <li><a href="">常见问题</a></li>
+        </ul>
+        <p>
+            <span>小米公司版权所有- <span><img src="images/ghs.png" alt=""></span><a href="">京ICP备10046444-京公网安备11010802020134号</a>-京ICP证110507号</span>
+        </p>
+    </div>
+</footer>
+<script>
+  var username=store.get('userkey');
+  var password=store.get('passkey');
+  console.log(username);
+  console.log(password);
+  $('#form').on('submit',function () {
+    if($('#ipt1').val()==username&&$('#ipt2').val()==password){
+      store.update('isLogin',true);
+    }else{
+      $('#myModal').modal('show');
+     return false;
+    }
+  })
+
+</script>
+</body>
+</html>

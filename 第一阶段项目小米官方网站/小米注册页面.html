@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="css/注册页.css">
+  <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="jquery-3.2.1.js"></script>
+  <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+</head>
+<body>
+<div class="container">
+  <div class="col-lg-4"></div>
+  <div class="col-lg-4">
+    <div class="row">
+      <p class="text-center"><img src="images/milogo.png" alt=""></p>
+    </div>
+    <div class="row">
+      <h2 class="text-center">注册小米帐号</h2>
+    </div>
+    <div class="row">
+      <h6>国家/地区</h6>
+      <div class="input-group">
+        <p type="text" class="form-control input1" >中国</p>
+      <span class="input-group-btn">
+        <button class="btn btn-default btn1 " type="button"><span
+          class="glyphicon glyphicon-chevron-down"></span></button>
+      </span>
+      </div>
+    </div>
+    <div class="row one">
+      <div  id="sel1"  class="col-lg-12">
+        <input type="text" class="form-control country" >
+      </div>
+    </div>
+    <div class="row">
+      <h6>手机号码</h6>
+      <div class="input-group">
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-default dropdown-toggle btn2" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+            +86 <span class="caret"></span></button>
+        </div>
+        <input type="text " class="form-control" id="mobile" aria-label="...">
+      </div>
+
+    </div>
+    <div class="row two">
+      <div class=" sel1 col-lg-12 " id="sel2" multiple="">
+        <input type="text" class="form-control num" >
+      </div>
+    </div>
+    <div class="row">
+      <h6>手机验证码</h6>
+      <input class="col-lg-8 input-lg " id="code" type="text" style="border-radius: 0px;">
+      <button class="btn col-lg-4 btn-default btn-lg" id="huoqu" style="font-size: 14px" >获取验证码</button>
+    </div>
+    <br>
+    <div class="row">
+      <form action="设置密码页面.html">
+        <button type="submit" class="btn btn-primary form-control " id="submit" style="background:#ff6700;border: none">立即注册</button>
+      </form>
+      <p class="help-block">
+        注册帐号即表示您同意并愿意遵守小米 <a href="">用户协议</a>和 <a href="">隐私政策</a>
+      </p>
+
+    </div>
+  </div>
+</div>
+<div id="myModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">状态</h4>
+        </div>
+        <div class="modal-body">
+         验证失败
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+  </div>
+</div>
+
+<footer class="container-fluid">
+  <div class="container">
+    <ul>
+      <li><a href="">简体</a>|</li>
+      <li><a href="">繁体</a>|</li>
+      <li><a href="">English</a>|</li>
+      <li><a href="">常见问题</a></li>
+    </ul>
+    <p>
+      <span>小米公司版权所有- <span><img src="images/ghs.png" alt=""></span><a href="">京ICP备10046444-京公网安备11010802020134号</a>-京ICP证110507号</span>
+    </p>
+  </div>
+</footer>
+<script>
+  var attr = [
+    {
+      country: "中国",
+      number: "+86"
+    },
+    {
+      country: "法国",
+      number: "+85"
+    },
+    {
+      country: "美国",
+      number: "+84"
+    },
+    {
+      country: "日本",
+      number: "+83"
+    },
+    {
+      country: "新加坡",
+      number: "+82"
+    },
+    {
+      country: "澳大利亚",
+      number: "+81"
+    }, {
+      country: "泰国",
+      number: "+80"
+    }, {
+      country: "南非",
+      number: "+79"
+    },
+    {
+      country: "韩国",
+      number: "+78"
+    },
+    {
+      country: "缅甸",
+      number: "+77"
+    }
+  ];
+  var onoff = true;
+  var html = '';
+  var html2 = '';
+  $('.btn1').click(function () {
+    if (onoff) {
+      $('.one').show();
+    } else {
+      $('.one').hide();
+    }
+    onoff = !onoff;
+  });
+  for (var i = 0; i < attr.length; i++) {
+    html += '<p class="opt" data-num="' + attr[i].number + '">' + attr[i].country + '</p>';
+    html2 += '<p class="opt2">' + attr[i].number + '</p>'
+  }
+  $('#sel2').html($('.sel1').html()+html2);
+  $('#sel1').html( $('#sel1').html()+html)
+    .find('.opt').on('click', function () {
+    var val = $(this).text();
+    $('.input1').text(val);
+    $('.btn2').html($(this).data('num')+'<span class="caret"></span>');
+    $('.one').hide();
+    onoff = true;
+  });
+  $('.country').on('keyup',function () {
+    $('#sel1 p').hide();
+    $('#sel1 p').filter(':contains('+$(this).val()+')').show();
+  })
+  $('.num').on('keyup',function () {
+    $('#sel2 p').hide();
+    $('#sel2 p').filter(':contains('+$(this).val()+')').show();
+  })
+  $('.btn2').click(function () {
+    if (onoff) {
+      $('.sel1').show();
+    } else {
+      $('.sel1').hide();
+    }
+    onoff = !onoff;
+  });
+  $('.sel1').find('.opt2').on('click', function () {
+    var val1 = $(this).text();
+    $('.btn2').html(val1 + '<span class="caret"></span>');
+    $('.sel1').hide();
+    onoff = true;
+  });
+    $('#huoqu').click(function () {
+      var time=60;
+      var timer=null;
+      timer=setInterval(function () {
+        $('#huoqu').attr('disabled',true);
+        $('#huoqu').text(time+'秒');
+        time--;
+        if(time==0){
+          $('#huoqu').text('重新获取验证码');
+          clearInterval(timer);
+          $('#huoqu').attr('disabled',false)
+        }
+      },1000)
+    })
+</script>
+<script>
+  var tel=null;
+  $('#huoqu').click(function () {
+    var mobile = $('#mobile').val();
+    tel = six(Math.round(Math.random()*9999));
+    console.log(tel);
+    var param = {
+      no:tel.toString()
+    };
+    $.ajax({
+      url:'http://sms.market.alicloudapi.com/singleSendSms',
+      type:'GET',
+      dataType:'json',
+      data:{
+        ParamString:JSON.stringify(param),
+        RecNum:mobile,
+        SignName:'杨鉴',
+        TemplateCode:'SMS_95530063'
+      },
+      headers:{
+        Authorization:'APPCODE 298afa57a9db44599242ac7c57bb1868'
+      }
+    }).done(function(data){
+
+    });
+  });
+
+$('#submit').click(function () {
+  if($('#code').val()==tel){
+    var html='';
+    html+='验证成功';
+    $('.modal-body').html(html);
+    $('#myModal').modal('show');
+  }else {
+    $('#myModal').modal('show');
+    return false;
+  }
+});
+function six(num) {
+  var str=num.toString();
+  var len=str.length;
+  if(len<6){
+    for(var i=0;i<6-len;i++){
+      str='0'+str;
+    }
+  }
+  return str;
+}
+
+
+
+
+</script>
+
+</body>
+</html>
